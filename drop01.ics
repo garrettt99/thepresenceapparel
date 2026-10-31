@@ -5,8 +5,8 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:drop01@thepresenceapparel.com
 DTSTAMP:20261031T000000Z
-DTSTART:20261127T040000Z
-DTEND:20261127T050000Z
+DTSTART:20261127T130000Z
+DTEND:20261127T140000Z
 SUMMARY:Presence Drop 01 is live
 DESCRIPTION:The first Presence drop is open. 10% of every sale goes to mental-health support. https://thepresenceapparel.com
 URL:https://thepresenceapparel.com
