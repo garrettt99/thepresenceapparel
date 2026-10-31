@@ -174,6 +174,10 @@ td{padding-block:16px;border-bottom:1px solid var(--line)}
 .ship b{font-family:var(--display);font-size:24px}
 .ship span{font-size:14px;color:var(--dim)}
 .boxed{border:1px solid var(--line2);padding:28px}
+.pair{border:1px solid var(--line2);padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.pair b{font-weight:500;font-size:15px}
+.pair span{font-size:14px;color:var(--muted)}
+.pair .btn{align-self:flex-start;margin-top:8px;min-height:44px;padding:0 20px}
 /* full-bleed hero */
 .bleed{position:relative;min-height:clamp(560px,82vh,860px);display:flex;align-items:flex-end;overflow:hidden;background:var(--bg2)}
 .bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
@@ -826,10 +830,10 @@ const SW={black:["Black","#121212"],charcoal:["Charcoal","#3c3d41"],olive:["Oliv
 function cset(pre,keys,first){return keys.map(c=>{const key=c==="last"?"bone":c;return {key,name:SW[key][0],hex:SW[key][1],img:c==="black"?first:pre+"_"+c}})}
 const ALT={hoodie:"back",tee:"tee",dadhat:"l_teecap"};
 const PRODUCTS=[
-  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","charcoal","olive","brown","navy","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
+  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","navy","olive","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
    desc:"The full Presence mark on the chest of a midweight fleece hoodie. For the slow mornings, the walks with no headphones, the dinners where the phone stays in your pocket.",
    details:["Midweight fleece, 50% cotton / 50% polyester (Heather Grey: 90% cotton / 10% polyester)","Double-lined hood, front pouch pocket","Unisex fit, size up for a relaxed look","Machine wash cold, inside out"]},
-  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","charcoal","olive","brown","navy","sand","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
+  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","navy","olive","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
    desc:"Soft, lightweight everyday tee carrying the full Presence mark. The kind you reach for first, with a reminder built in.",
    details:["Solid colours: 100% Airlume combed ring-spun cotton","Heather Grey: 90% cotton / 10% polyester","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},
   {id:"litm",cat:"Tees",chart:"tee",name:"Live in the Moment Tee",badge:"Statement",price:45,img:"litm2",gallery:[],colours:[{key:"black",name:"Black",hex:"#121212",img:"litm2"}],sizes:["S","M","L","XL","2XL"],desc:"The P mark with the whole idea underneath it: Live in the moment.",details:["100% combed ring-spun cotton","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},{id:"snapback",cat:"Hats",name:"Presence Snapback",price:35,img:"p_snap",gallery:[],colours:cset("sv",["black","charcoal","navy","heather"],"p_snap"),sizes:null,
@@ -918,7 +922,7 @@ function shop(v){
     if(!list.length){const e=document.createElement("p");e.className="empty";e.textContent="Nothing in that combination yet. Try another colour.";grid.appendChild(e)}
   }
   ["All","Hoodies","Tees","Hats"].forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.c=c;b.textContent=c;b.addEventListener("click",()=>{cat=c;draw()});chips.appendChild(b)});
-  ["black","charcoal","olive","brown","navy","sand","heather","bone"].forEach(k=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=k;b.style.background=SW[k][1];b.title=SW[k][0];b.setAttribute("aria-label","Filter by "+SW[k][0]);b.addEventListener("click",()=>{colour=colour===k?null:k;draw()});dots.appendChild(b)});
+  ["black","charcoal","olive","navy","sand","heather","bone"].forEach(k=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=k;b.style.background=SW[k][1];b.title=SW[k][0];b.setAttribute("aria-label","Filter by "+SW[k][0]);b.addEventListener("click",()=>{colour=colour===k?null:k;draw()});dots.appendChild(b)});
   sort.addEventListener("change",draw);clear.addEventListener("click",()=>{cat="All";colour=null;draw()});
   draw();
 }
@@ -1001,6 +1005,15 @@ function product(p){
   document.getElementById("sbname").textContent=p.name;document.getElementById("sbprice").textContent="$"+p.price;
   document.getElementById("sbadd").onclick=()=>{if(!size){add.scrollIntoView({behavior:"smooth",block:"center"});status.textContent="Pick a size first.";return}add.click()};
   add.addEventListener("click",()=>{if(!size){status.textContent="Pick a size first.";return}status.textContent="";addToBag(p.id,size,colour)});
+  if(p.id==="hoodie"){
+    /* Gift set: hoodie + Live in the Moment Tee = $124, which clears the $100 free-shipping line */
+    const tee=PRODUCTS.find(x=>x.id==="litm");
+    const pair=document.createElement("div");pair.className="pair";
+    pair.innerHTML='<b>Make it a gift set</b><span>Add the Live in the Moment Tee: $124 together, and shipping is free.</span>';
+    const pb=document.createElement("button");pb.type="button";pb.className="btn ghost";pb.textContent="Add hoodie + tee";
+    pb.addEventListener("click",()=>{if(!size){status.textContent="Pick a hoodie size first.";return}status.textContent="";const ts=tee.sizes.includes(size)?size:tee.sizes[tee.sizes.length-1];addToBag("hoodie",size,colour,true);addToBag("litm",ts,tee.colours[0])});
+    pair.appendChild(pb);status.insertAdjacentElement("afterend",pair);
+  }
   fill(v.querySelector("[data-grid]"),p.id);
   return v;
 }
