@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Presence Apparel//Drop 01//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:drop01@thepresenceapparel.com
+DTSTAMP:20261031T000000Z
+DTSTART:20261127T040000Z
+DTEND:20261127T050000Z
+SUMMARY:Presence Drop 01 is live
+DESCRIPTION:The first Presence drop is open. 10% of every sale goes to mental-health support. https://thepresenceapparel.com
+URL:https://thepresenceapparel.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Presence Drop 01 is live
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
