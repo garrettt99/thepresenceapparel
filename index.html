@@ -760,23 +760,23 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
 </template>
 
 <script>
-const IMG={tee2:"img/tee2.jpg",litm2:"img/litm2.jpg",p_hoodie:"img/p_hoodie.jpg",p_dad:"img/p_dad.jpg",p_snap:"img/p_snap.jpg",l_teecap:"img/l_teecap.jpg",hoodie:"img/hoodie.jpg",tee:"img/tee.jpg",hat:"img/hat.jpg",back:"img/back.jpg",};
+const IMG={tee2:"img/tee2.jpg",litm2:"img/litm2.jpg",p_hoodie:"img/p_hoodie.jpg",p_dad:"img/p_dad.jpg",p_snap:"img/p_snap.jpg",l_teecap:"img/l_teecap.jpg",hoodie:"img/hoodie.jpg",tee:"img/tee.jpg",hat:"img/hat.jpg",back:"img/back.jpg",l_hood9:"img/l_hood9.jpg",dad_side:"img/dad_side.jpg"};
 const V={};
-[["hv",{black:"img/hv_black.jpg",charcoal:"img/hv_charcoal.jpg",olive:"img/hv_olive.jpg",brown:"img/hv_brown.jpg",navy:"img/hv_navy.jpg",sand:"img/hv_sand.jpg",heather:"img/hv_heather.jpg",last:"img/hv_last.jpg"}],["dv",{black:"img/dv_black.jpg",charcoal:"img/dv_charcoal.jpg",olive:"img/dv_olive.jpg",brown:"img/dv_brown.jpg",navy:"img/dv_navy.jpg",sand:"img/dv_sand.jpg",heather:"img/dv_heather.jpg",last:"img/dv_last.jpg"}],["sv",{black:"img/sv_black.jpg",charcoal:"img/sv_charcoal.jpg",olive:"img/sv_olive.jpg",brown:"img/sv_brown.jpg",navy:"img/sv_navy.jpg",sand:"img/sv_sand.jpg",heather:"img/sv_heather.jpg",last:"img/sv_last.jpg"}],["tb",{black:"img/tb_black.jpg",charcoal:"img/tb_charcoal.jpg",olive:"img/tb_olive.jpg",brown:"img/tb_brown.jpg",navy:"img/tb_navy.jpg",sand:"img/tb_sand.jpg",heather:"img/tb_heather.jpg",last:"img/tb_last.jpg"}]].forEach(([k,o])=>{for(const c in o)IMG[k+"_"+c]=o[c]});
-const SW={black:["Black","#121212"],charcoal:["Charcoal","#3d3d3f"],olive:["Olive","#4b5233"],brown:["Brown","#4a3226"],navy:["Navy","#1e2740"],sand:["Sand","#cdbfa4"],heather:["Heather Grey","#a8a8a8"],bone:["Bone","#e9e3d6"],blackblack:["Black/Black","#050505"]};
+[["hv",{charcoal:"img/hv_charcoal.jpg",olive:"img/hv_olive.jpg",brown:"img/hv_brown.jpg",navy:"img/hv_navy.jpg",sand:"img/hv_sand.jpg",heather:"img/hv_heather.jpg"}],["dv",{charcoal:"img/dv_charcoal.jpg",navy:"img/dv_navy.jpg",sand:"img/dv_sand.jpg",last:"img/dv_last.jpg"}],["sv",{charcoal:"img/sv_charcoal.jpg",navy:"img/sv_navy.jpg",heather:"img/sv_heather.jpg"}],["tb",{black:"img/tb_black.jpg",charcoal:"img/tb_charcoal.jpg",olive:"img/tb_olive.jpg",brown:"img/tb_brown.jpg",navy:"img/tb_navy.jpg",sand:"img/tb_sand.jpg",heather:"img/tb_heather.jpg",last:"img/tb_last.jpg"}],["tc",{charcoal:"img/tc_charcoal.jpg",olive:"img/tc_olive.jpg",brown:"img/tc_brown.jpg",navy:"img/tc_navy.jpg",sand:"img/tc_sand.jpg",heather:"img/tc_heather.jpg",bone:"img/tc_bone.jpg"}]].forEach(([k,o])=>{for(const c in o)IMG[k+"_"+c]=o[c]});
+const SW={black:["Black","#121212"],charcoal:["Charcoal","#3c3d41"],olive:["Olive","#454a33"],brown:["Brown","#4a372b"],navy:["Navy","#1a2136"],sand:["Sand","#c2b398"],heather:["Heather Grey","#959597"],bone:["Bone","#d4ccba"]};
 function cset(pre,keys,first){return keys.map(c=>{const key=c==="last"?"bone":c;return {key,name:SW[key][0],hex:SW[key][1],img:c==="black"?first:pre+"_"+c}})}
 const ALT={hoodie:"back",tee:"tee",dadhat:"l_teecap"};
 const PRODUCTS=[
-  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["hv_black","back"],colours:cset("hv",["black","charcoal","olive","brown","navy","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
+  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","charcoal","olive","brown","navy","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
    desc:"The full Presence mark on the chest of a heavyweight hoodie. For the slow mornings, the walks with no headphones, the dinners where the phone stays in your pocket.",
    details:["Heavy blend fleece, 50% cotton / 50% polyester","Double-lined hood, front pouch pocket","Unisex fit, size up for a relaxed look","Machine wash cold, inside out"]},
-  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","charcoal","olive","brown","navy","sand","heather","last"].map(c=>{const key=c==="last"?"bone":c;return {key,name:SW[key][0],hex:SW[key][1],img:c==="black"?"tee2":"tb_"+c}}),sizes:["S","M","L","XL","2XL"],
+  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","charcoal","olive","brown","navy","sand","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
    desc:"Soft, heavyweight everyday tee carrying the full Presence mark. Easy to wear, easy to remember what it stands for.",
    details:["100% combed ring-spun cotton (heather colours are a cotton-poly blend)","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},
-  {id:"litm",cat:"Tees",chart:"tee",name:"Live in the Moment Tee",badge:"Statement",price:45,img:"litm2",gallery:[],colours:[{key:"black",name:"Black",hex:"#121212",img:"litm2"}],sizes:["S","M","L","XL","2XL"],desc:"The P mark with the whole idea underneath it: Live in the moment.",details:["100% combed ring-spun cotton","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},{id:"snapback",cat:"Hats",name:"Presence Snapback",price:35,img:"p_snap",gallery:["sv_black"],colours:cset("sv",["black","charcoal","navy","heather"],"p_snap"),sizes:null,
+  {id:"litm",cat:"Tees",chart:"tee",name:"Live in the Moment Tee",badge:"Statement",price:45,img:"litm2",gallery:[],colours:[{key:"black",name:"Black",hex:"#121212",img:"litm2"}],sizes:["S","M","L","XL","2XL"],desc:"The P mark with the whole idea underneath it: Live in the moment.",details:["100% combed ring-spun cotton","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},{id:"snapback",cat:"Hats",name:"Presence Snapback",price:35,img:"p_snap",gallery:[],colours:cset("sv",["black","charcoal","navy","heather"],"p_snap"),sizes:null,
    desc:"The Presence mark embroidered on a structured flat-brim snapback. Clean, sharp, everyday.",
    details:["Wool blend","Structured six-panel crown","Flat brim","Adjustable snap, one size fits most"]},
-  {id:"dadhat",cat:"Hats",name:"Presence Dad Hat",price:35,img:"p_dad",gallery:["dv_black","l_teecap"],colours:cset("dv",["black","charcoal","navy","sand","last"],"p_dad"),sizes:null,
+  {id:"dadhat",cat:"Hats",name:"Presence Dad Hat",price:35,img:"p_dad",gallery:["dad_side","l_teecap"],colours:cset("dv",["black","charcoal","navy","sand","last"],"p_dad").map(c=>c.key==="sand"?{...c,name:"Khaki",hex:"#a99a72"}:c.key==="bone"?{...c,name:"Stone"}:c),sizes:null,
    desc:"The Presence mark on a soft, unstructured dad hat with a curved brim. One size, adjustable strap.",
    details:["100% chino cotton twill","Unstructured, low-profile six-panel crown","Pre-curved brim","Adjustable strap, one size fits most"]}
 ];
@@ -813,7 +813,7 @@ drawer.addEventListener("keydown",e=>{if(e.key==="Escape")closeBag()});
 renderBag();
 function addToBag(id,size,c,quiet){const ck=c?c.key:"black";const f=bag.find(i=>i.id===id&&i.size===size&&(i.c||"black")===ck);if(f)f.qty++;else bag.push({id,size,c:ck,qty:1});saveBag();renderBag();const p=PRODUCTS.find(x=>x.id===id);if(quiet){toast("Added: "+p.name+" · "+size)}else openBag()}
 const LAUNCH=new Date("2026-11-27T00:00:00-04:00").getTime();
-function tick(){const el=app.querySelector("[data-count]");if(!el)return;let t=Math.max(0,LAUNCH-Date.now());const d=Math.floor(t/864e5);t-=d*864e5;const h=Math.floor(t/36e5);t-=h*36e5;const m=Math.floor(t/6e4);const s=Math.floor((t-m*6e4)/1e3);const pad=x=>String(x).padStart(2,"0");el.querySelector("[data-d]").textContent=d;el.querySelector("[data-h]").textContent=pad(h);el.querySelector("[data-m]").textContent=pad(m);el.querySelector("[data-s]").textContent=pad(s)}
+function tick(){const el=app.querySelector("[data-count]");if(!el)return;if(Date.now()>=LAUNCH){const w=el.closest(".countwrap");if(w&&!w.dataset.live){w.dataset.live=1;w.innerHTML='<p class="eyebrow">Drop 01</p><a class="btn" href="#shop">The store is open</a>'}return}let t=Math.max(0,LAUNCH-Date.now());const d=Math.floor(t/864e5);t-=d*864e5;const h=Math.floor(t/36e5);t-=h*36e5;const m=Math.floor(t/6e4);const s=Math.floor((t-m*6e4)/1e3);const pad=x=>String(x).padStart(2,"0");el.querySelector("[data-d]").textContent=d;el.querySelector("[data-h]").textContent=pad(h);el.querySelector("[data-m]").textContent=pad(m);el.querySelector("[data-s]").textContent=pad(s)}
 setInterval(tick,1000);
 const CHARTS={hoodie:{note:"Gildan 18500 heavy blend hoodie. Measured flat, in inches.",cols:["Size","Chest width","Body length","Sleeve length"],rows:[["S","20","27","33½"],["M","22","28","34½"],["L","24","29","35½"],["XL","26","30","36½"],["2XL","28","31","37½"],["3XL","30","32","38½"]]},
  tee:{note:"Bella+Canvas 3001 tee. Measured flat, in inches.",cols:["Size","Chest width","Body length"],rows:[["S","18","28"],["M","20","29"],["L","22","30"],["XL","24","31"],["2XL","26","32"]]}};
@@ -915,7 +915,7 @@ function product(p){
   let colour=(PRESEL&&p.colours.find(c=>c.key===PRESEL))||p.colours[0];PRESEL=null;
   const colLabel=v.querySelector("[data-colname]"),swBox=v.querySelector("[data-swatches]");
   function drawThumbs(){
-    th.innerHTML="";const imgs=[colour.img].concat(colour.key==="black"?p.gallery:[]);
+    th.innerHTML="";const imgs=[colour.img].concat(colour.gallery||(colour.key==="black"?p.gallery:[]));
     main.src=IMG[imgs[0]];main.alt=colour.name+" "+p.name;
     if(imgs.length<2){th.hidden=true;return}th.hidden=false;
     imgs.forEach((g,i)=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Show photo "+(i+1));b.setAttribute("aria-pressed",i===0?"true":"false");const im=document.createElement("img");im.src=IMG[g];im.alt="";b.appendChild(im);b.addEventListener("click",()=>{main.src=IMG[g];th.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true")});th.appendChild(b)});
@@ -923,7 +923,7 @@ function product(p){
   function pickColour(c){colour=c;colLabel.textContent=c.name;swBox.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===c.key?"true":"false"));drawThumbs()}
   p.colours.forEach(c=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=c.key;b.setAttribute("aria-label",c.name);b.title=c.name;b.style.background=c.hex;b.addEventListener("click",()=>pickColour(c));swBox.appendChild(b)});
   const mb=q("mainbox")[0];
-  mb.addEventListener("click",()=>{const imgs=[colour.img].concat(colour.key==="black"?p.gallery:[]);const cur=imgs.findIndex(g=>IMG[g]===main.src);openLB(imgs,Math.max(0,cur),colour.name+" "+p.name)});
+  mb.addEventListener("click",()=>{const imgs=[colour.img].concat(colour.gallery||(colour.key==="black"?p.gallery:[]));const cur=imgs.findIndex(g=>IMG[g]===main.src);openLB(imgs,Math.max(0,cur),colour.name+" "+p.name)});
   if(matchMedia("(hover:hover) and (min-width:900px)").matches){mb.querySelector(".zhint").textContent="Hover to zoom · click for full screen";mb.addEventListener("mousemove",e=>{const r=mb.getBoundingClientRect();main.style.transformOrigin=((e.clientX-r.left)/r.width*100)+"% "+((e.clientY-r.top)/r.height*100)+"%";mb.classList.add("zoom")});mb.addEventListener("mouseleave",()=>mb.classList.remove("zoom"))}
   pickColour(colour);
   let size=p.sizes?null:"One size";
