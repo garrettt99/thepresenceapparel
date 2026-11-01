@@ -174,6 +174,10 @@ td{padding-block:16px;border-bottom:1px solid var(--line)}
 .ship b{font-family:var(--display);font-size:24px}
 .ship span{font-size:14px;color:var(--dim)}
 .boxed{border:1px solid var(--line2);padding:28px}
+.pair{border:1px solid var(--line2);padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.pair b{font-weight:500;font-size:15px}
+.pair span{font-size:14px;color:var(--muted)}
+.pair .btn{align-self:flex-start;margin-top:8px;min-height:44px;padding:0 20px}
 /* full-bleed hero */
 .bleed{position:relative;min-height:clamp(560px,82vh,860px);display:flex;align-items:flex-end;overflow:hidden;background:var(--bg2)}
 .bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
@@ -587,7 +591,7 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     <div class="head"><h2>The first drop</h2><a class="viewall" href="#shop">Shop all →</a></div>
     <div class="grid" data-grid></div>
     <div class="trust" style="margin-top:44px">
-      <div><b>10% to mental health</b><span>Of every sale, donated monthly</span></div>
+      <div><b>10% to mental health</b><span>Of every sale, donated quarterly</span></div>
       <div><b>Printed to order</b><span>Made for you, less overstock</span></div>
       <div><b>Free shipping over $100</b><span>$9.99 flat anywhere in Canada</span></div>
       <div><b>Receipts, in public</b><span>Every donation posted on the Giving page</span></div>
@@ -675,7 +679,7 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
         <p class="status" data-f="status" role="status"></p>
         <p class="note">Printed in 2–5 business days, delivered 2–6 business days later. $9.99 shipping in Canada, free over $100.</p>
       </div>
-      <div class="perks"><div><b>Made to order</b>Printed when you buy</div><div><b>10% donated</b>To mental-health support, monthly</div><div><b>Free replacement</b>If it arrives damaged or wrong</div></div>
+      <div class="perks"><div><b>Made to order</b>Printed when you buy</div><div><b>10% donated</b>To mental-health support, quarterly</div><div><b>Free replacement</b>If it arrives damaged or wrong</div></div>
       <div>
         <details open><summary>Details</summary><ul data-f="details"></ul></details>
         <details><summary>Shipping &amp; returns</summary><p>$9.99 flat across Canada, free over $100. Every piece is made for you, so we can’t take back a wrong size. If it arrives damaged, misprinted or wrong, email hello@thepresenceapparel.com within 30 days of delivery and we’ll replace it or refund you, your choice.</p></details>
@@ -717,7 +721,7 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
   <div class="view">
   <div class="wrap page-hero">
     <p class="eyebrow">Giving</p>
-    <h1>10% of every sale. Every month. Receipts posted.</h1>
+    <h1>10% of every sale. Every quarter. Receipts posted.</h1>
     <p>Living in the moment is easier said than done, especially when your head is heavy. That’s why 10% of the price of everything you buy here goes to mental-health support in Canada. We’re finalizing our charity partner and will name them here before the first donation.</p>
   </div>
   <div class="stats"><div class="wrap">
@@ -729,14 +733,14 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     <h2 style="font-size:40px">How it works</h2>
     <ol class="steps">
       <li><span class="n">Step 1</span><strong>You order</strong><span>10% of the merchandise price you pay (after discounts, before tax and shipping) is set aside in a separate account. Not 10% of profit: 10% of the sale.</span></li>
-      <li><span class="n">Step 2</span><strong>We donate monthly</strong><span>At the end of each month we total it up and send it in one donation.</span></li>
+      <li><span class="n">Step 2</span><strong>We donate quarterly</strong><span>At the end of each quarter we total it up and send it in one donation.</span></li>
       <li><span class="n">Step 3</span><strong>We show you</strong><span>The amount and the receipt go up on this page, so you never have to take our word for it. Presence makes the donation, so your purchase isn’t a tax-deductible gift.</span></li>
     </ol>
   </div></section>
   <section style="padding-top:0"><div class="wrap" style="display:flex;flex-direction:column;gap:24px">
     <h2 style="font-size:40px">Donation log</h2>
     <div class="tablebox"><table>
-      <thead><tr><th scope="col">Month</th><th scope="col">Orders</th><th scope="col">Donated</th><th scope="col">Receipt</th></tr></thead>
+      <thead><tr><th scope="col">Quarter</th><th scope="col">Orders</th><th scope="col">Donated</th><th scope="col">Receipt</th></tr></thead>
       <tbody><tr><td colspan="4" style="color:var(--dim)">First donation: early January 2027, covering Nov 27 to Dec 31, 2026.</td></tr></tbody>
     </table></div>
   </div></section>
@@ -797,7 +801,7 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
       <section id="q-faq"><h1>FAQ</h1>
         <div>
           <details open><summary>What does Presence mean?</summary><p>Being here, right now, not stuck in yesterday or worried about tomorrow. Every piece is a small reminder to come back to the moment you’re in.</p></details>
-          <details><summary>How does the 10% work?</summary><p>10% of the merchandise price of every order (after discounts, before tax and shipping) is donated to mental-health support in Canada each month. Every donation and receipt goes on the Giving page.</p></details>
+          <details><summary>How does the 10% work?</summary><p>10% of the merchandise price of every order (after discounts, before tax and shipping) is donated to mental-health support in Canada every quarter. Every donation and receipt goes on the Giving page.</p></details>
           <details><summary>How do the sizes fit?</summary><p>Everything is unisex and true to size. Want it oversized? Go one size up.</p></details>
           <details><summary>Why does my order take a few days to ship?</summary><p>Every piece is printed when you order it, so nothing sits in a warehouse waiting to be sold. Printing takes 2–5 business days.</p></details>
           <details><summary>How do I wash it?</summary><p>Inside out, cold water, tumble dry low or hang dry. Don’t iron over the print.</p></details>
@@ -826,16 +830,16 @@ const SW={black:["Black","#121212"],charcoal:["Charcoal","#3c3d41"],olive:["Oliv
 function cset(pre,keys,first){return keys.map(c=>{const key=c==="last"?"bone":c;return {key,name:SW[key][0],hex:SW[key][1],img:c==="black"?first:pre+"_"+c}})}
 const ALT={hoodie:"back",tee:"tee",dadhat:"l_teecap"};
 const PRODUCTS=[
-  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","charcoal","olive","brown","navy","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
+  {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","navy","olive","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
    desc:"The full Presence mark on the chest of a midweight fleece hoodie. For the slow mornings, the walks with no headphones, the dinners where the phone stays in your pocket.",
    details:["Midweight fleece, 50% cotton / 50% polyester (Heather Grey: 90% cotton / 10% polyester)","Double-lined hood, front pouch pocket","Unisex fit, size up for a relaxed look","Machine wash cold, inside out"]},
-  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","charcoal","olive","brown","navy","sand","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
+  {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","navy","olive","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
    desc:"Soft, lightweight everyday tee carrying the full Presence mark. The kind you reach for first, with a reminder built in.",
    details:["Solid colours: 100% Airlume combed ring-spun cotton","Heather Grey: 90% cotton / 10% polyester","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},
-  {id:"litm",cat:"Tees",chart:"tee",name:"Live in the Moment Tee",badge:"Statement",price:45,img:"litm2",gallery:[],colours:[{key:"black",name:"Black",hex:"#121212",img:"litm2"}],sizes:["S","M","L","XL","2XL"],desc:"The P mark with the whole idea underneath it: Live in the moment.",details:["100% combed ring-spun cotton","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},{id:"snapback",cat:"Hats",name:"Presence Snapback",price:35,img:"p_snap",gallery:[],colours:cset("sv",["black","charcoal","navy","heather"],"p_snap"),sizes:null,
+  {id:"litm",cat:"Tees",chart:"tee",name:"Live in the Moment Tee",badge:"Statement",price:45,img:"litm2",gallery:[],colours:[{key:"black",name:"Black",hex:"#121212",img:"litm2"}],sizes:["S","M","L","XL","2XL"],desc:"The P mark with the whole idea underneath it: Live in the moment.",details:["100% combed ring-spun cotton","Unisex fit","Side-seamed, shoulder taping","Machine wash cold, inside out"]},{id:"snapback",cat:"Hats",name:"Presence Snapback",price:40,img:"p_snap",gallery:[],colours:cset("sv",["black","charcoal","navy","heather"],"p_snap"),sizes:null,
    desc:"The Presence mark embroidered on a structured flat-brim snapback, with a crown that holds its shape.",
    details:["80% acrylic / 20% wool","Structured six-panel crown","Flat brim","Adjustable snap, one size fits most"]},
-  {id:"dadhat",cat:"Hats",name:"Presence Dad Hat",price:35,img:"p_dad",gallery:["dad_side","l_teecap"],colours:cset("dv",["black","charcoal","navy","sand","last"],"p_dad").map(c=>c.key==="sand"?{...c,name:"Khaki",hex:"#a99a72"}:c.key==="bone"?{...c,name:"Stone"}:c),sizes:null,
+  {id:"dadhat",cat:"Hats",name:"Presence Dad Hat",price:38,img:"p_dad",gallery:["dad_side","l_teecap"],colours:cset("dv",["black","charcoal","navy","sand","last"],"p_dad").map(c=>c.key==="sand"?{...c,name:"Khaki",hex:"#a99a72"}:c.key==="bone"?{...c,name:"Stone"}:c),sizes:null,
    desc:"The Presence mark on a soft, unstructured dad hat with a curved brim. One size, adjustable strap.",
    details:["100% chino cotton twill","Unstructured, low-profile six-panel crown","Pre-curved brim","Adjustable strap, one size fits most"]}
 ];
@@ -918,7 +922,7 @@ function shop(v){
     if(!list.length){const e=document.createElement("p");e.className="empty";e.textContent="Nothing in that combination yet. Try another colour.";grid.appendChild(e)}
   }
   ["All","Hoodies","Tees","Hats"].forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.c=c;b.textContent=c;b.addEventListener("click",()=>{cat=c;draw()});chips.appendChild(b)});
-  ["black","charcoal","olive","brown","navy","sand","heather","bone"].forEach(k=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=k;b.style.background=SW[k][1];b.title=SW[k][0];b.setAttribute("aria-label","Filter by "+SW[k][0]);b.addEventListener("click",()=>{colour=colour===k?null:k;draw()});dots.appendChild(b)});
+  ["black","charcoal","olive","navy","sand","heather","bone"].forEach(k=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=k;b.style.background=SW[k][1];b.title=SW[k][0];b.setAttribute("aria-label","Filter by "+SW[k][0]);b.addEventListener("click",()=>{colour=colour===k?null:k;draw()});dots.appendChild(b)});
   sort.addEventListener("change",draw);clear.addEventListener("click",()=>{cat="All";colour=null;draw()});
   draw();
 }
@@ -1001,6 +1005,15 @@ function product(p){
   document.getElementById("sbname").textContent=p.name;document.getElementById("sbprice").textContent="$"+p.price;
   document.getElementById("sbadd").onclick=()=>{if(!size){add.scrollIntoView({behavior:"smooth",block:"center"});status.textContent="Pick a size first.";return}add.click()};
   add.addEventListener("click",()=>{if(!size){status.textContent="Pick a size first.";return}status.textContent="";addToBag(p.id,size,colour)});
+  if(p.id==="hoodie"){
+    /* Gift set: hoodie + Live in the Moment Tee = $124, which clears the $100 free-shipping line */
+    const tee=PRODUCTS.find(x=>x.id==="litm");
+    const pair=document.createElement("div");pair.className="pair";
+    pair.innerHTML='<b>Make it a gift set</b><span>Add the Live in the Moment Tee: $124 together, and shipping is free.</span>';
+    const pb=document.createElement("button");pb.type="button";pb.className="btn ghost";pb.textContent="Add hoodie + tee";
+    pb.addEventListener("click",()=>{if(!size){status.textContent="Pick a hoodie size first.";return}status.textContent="";const ts=tee.sizes.includes(size)?size:tee.sizes[tee.sizes.length-1];addToBag("hoodie",size,colour,true);addToBag("litm",ts,tee.colours[0])});
+    pair.appendChild(pb);status.insertAdjacentElement("afterend",pair);
+  }
   fill(v.querySelector("[data-grid]"),p.id);
   return v;
 }
