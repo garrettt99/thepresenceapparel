@@ -24,6 +24,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
+<iframe name="shopify_signup" title="Sign-up" hidden style="display:none"></iframe>
 <title>The Presence Apparel</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -350,6 +351,19 @@ h1,h2{font-weight:600}
 .sbar input::-webkit-search-cancel-button{display:none}
 .sitem b{font-weight:500;font-size:14px}.sitem span{font-size:13px;color:var(--dim)}
 .visually{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.notify{display:flex;flex-direction:column;gap:8px;width:100%;max-width:440px}
+.notify .nrow{display:flex;gap:8px;flex-wrap:wrap}
+.notify label{flex:1 1 200px;display:flex}
+.notify input[type=email]{flex:1;min-width:0;min-height:52px;padding:0 16px;background:rgba(14,14,13,.55);border:1px solid var(--line2);color:var(--fg);font:inherit;font-size:16px}
+.notify input[type=email]::placeholder{color:var(--dim)}
+.notify input[type=email]:focus{border-color:var(--accent);outline:none}
+.notify .btn{flex:0 0 auto}
+.notify .nmsg{font-size:13px;color:var(--muted);min-height:1.4em}
+.notify.done .nmsg{color:var(--accent)}
+.fsign{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px;border-block:1px solid var(--line);padding-block:28px}
+.fsign>div:first-child{display:flex;flex-direction:column;gap:6px;max-width:440px}
+.fsign strong{font-family:var(--display);font-weight:600;font-size:22px}
+.fsign span{color:var(--muted);font-size:15px}
 .breathe-sec{background:var(--bg2)}
 .breathe{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center}
 @media (max-width:820px){.breathe{grid-template-columns:1fr}}
@@ -543,6 +557,13 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
 <footer>
   <div class="wrap">
     <div class="help"><strong>Struggling?</strong><span>Call or text <b style="color:var(--fg);font-weight:500">9-8-8</b>, 24/7, anywhere in Canada. In immediate danger, call <b style="color:var(--fg);font-weight:500">911</b>. You’re not alone.</span></div>
+    <div class="fsign"><div><strong>Be here first.</strong><span>Get one email when Drop 01 opens, plus new drops and stories. 10% of every sale goes to mental-health support.</span></div>
+          <form class="notify" action="https://vyev1y-1i.myshopify.com/contact#contact_form" method="post" accept-charset="UTF-8" target="shopify_signup" onsubmit="return notifySubmit(this)">
+            <input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="prelaunch, website">
+            <div class="nrow"><label><span class="visually">Email address</span><input type="email" name="contact[email]" required placeholder="Your email" autocomplete="email"></label><button class="btn" type="submit">Notify me</button></div>
+            <p class="nmsg" role="status" aria-live="polite">Be first in line on Nov 27. No spam, unsubscribe anytime.</p>
+          </form>
+    </div>
     <div class="fcols">
       <div style="display:flex;flex-direction:column;gap:12px"><img src="img/logo.png" alt="The Presence Apparel"><span class="small">Live in the moment.</span></div>
       <nav class="fnav" aria-label="Footer">
@@ -573,7 +594,12 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
         <div class="countwrap" aria-label="Time until launch">
           <p class="eyebrow">Store opens Black Friday</p>
           <div class="count" data-count><div><b data-d>--</b><span>Days</span></div><div><b data-h>--</b><span>Hrs</span></div><div><b data-m>--</b><span>Min</span></div><div><b data-s>--</b><span>Sec</span></div></div>
-          <a class="callink" href="drop01.ics" download="presence-drop-01.ics">＋ Remind me: add the drop to my calendar</a>
+          <form class="notify" action="https://vyev1y-1i.myshopify.com/contact#contact_form" method="post" accept-charset="UTF-8" target="shopify_signup" onsubmit="return notifySubmit(this)">
+            <input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="prelaunch, website">
+            <div class="nrow"><label><span class="visually">Email address</span><input type="email" name="contact[email]" required placeholder="Your email" autocomplete="email"></label><button class="btn" type="submit">Notify me</button></div>
+            <p class="nmsg" role="status" aria-live="polite">Be first in line on Nov 27. No spam, unsubscribe anytime.</p>
+          </form>
+          <a class="callink" href="drop01.ics" download="presence-drop-01.ics">＋ Or add the drop to my calendar</a>
         </div>
       </div>
     </div>
@@ -750,7 +776,7 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     <h1>Privacy policy</h1>
     <p>The Presence Apparel (“Presence”, “we”) sells clothing online to customers in Canada. This policy explains what personal information we collect, why, and what you can ask us to do with it. We follow Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
     <h2>What we collect</h2>
-    <ul><li><b>When you order:</b> your name, email, shipping and billing address, phone number if you give it, and what you bought.</li><li><b>Payment:</b> handled by our checkout provider, Shopify. We never see or store your full card number.</li><li><b>When you email us:</b> your email address and whatever you choose to tell us.</li><li><b>On this website:</b> the items in your bag are stored only in your own browser (local storage), not on our servers. We don’t run advertising trackers on this site.</li></ul>
+    <ul><li><b>When you order:</b> your name, email, shipping and billing address, phone number if you give it, and what you bought.</li><li><b>Payment:</b> handled by our checkout provider, Shopify. We never see or store your full card number.</li><li><b>When you join our email list:</b> your email address, stored in our Shopify store so we can tell you about drops. You can unsubscribe from any email.</li><li><b>When you email us:</b> your email address and whatever you choose to tell us.</li><li><b>On this website:</b> the items in your bag are stored only in your own browser (local storage), not on our servers. We don’t run advertising trackers on this site.</li></ul>
     <h2>Why we use it</h2>
     <ul><li>To make, ship and track your order, and to answer your questions.</li><li>To handle replacements and refunds.</li><li>To keep the records we’re required to keep, like sales and tax records.</li><li>To send you marketing emails, only if you’ve said yes. Every email has an unsubscribe link.</li></ul>
     <h2>Who we share it with</h2>
@@ -1020,6 +1046,13 @@ function route(){
   const sb=document.getElementById("stickybar");if(sb)sb.hidden=!p;
 }
 window.addEventListener("hashchange",route);route();
+
+function notifySubmit(f){
+  const inp=f.querySelector('input[type=email]'),msg=f.querySelector('.nmsg');
+  if(!inp.value||!inp.checkValidity())return false;
+  setTimeout(()=>{f.classList.add('done');msg.textContent="You're on the list. We'll email you when Drop 01 opens on Nov 27.";inp.value='';f.querySelector('button').textContent='Added'},400);
+  return true;
+}
 </script>
 
 </body>
