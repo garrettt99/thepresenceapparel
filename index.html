@@ -727,8 +727,8 @@ header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35)}
     <p class="story-quote">We spend so much of life somewhere else. Presence is a reminder to come back.</p>
     <div style="display:flex;flex-wrap:wrap;gap:40px 80px">
       <div class="story-body" style="flex:1 1 420px">
-        <p>Presence started with a simple idea. Most of the stress we carry lives in a moment that isn’t this one: the thing we said yesterday, the thing we’re dreading tomorrow, the feed full of someone else’s life.</p>
-        <p>Being present doesn’t fix everything. But it’s where things start to feel lighter. A walk where you actually notice the trees. A conversation where your phone stays in your pocket. A minute where you just breathe.</p>
+        <p>Presence started with a simple idea. Most of the stress we carry lives in a moment that isn’t this one: the thing we said yesterday, the thing we’re dreading tomorrow, the plans we keep putting off.</p>
+        <p>Being present doesn’t fix everything. But it’s where things start to feel lighter. The game you actually watch. The drive with the windows down. The friend you finally check in on.</p>
       </div>
       <div class="story-body" style="flex:1 1 420px">
         <p>So we made clothing that carries that reminder. One mark, worn every day. Something you catch in the mirror, or a stranger asks about, and for a second you come back to where you are.</p>
@@ -858,7 +858,7 @@ function cset(pre,keys,first){return keys.map(c=>{const key=c==="last"?"bone":c;
 const ALT={hoodie:"back",tee:"tee",dadhat:"l_teecap"};
 const PRODUCTS=[
   {id:"hoodie",cat:"Hoodies",chart:"hoodie",name:"Presence Hoodie",price:79,img:"p_hoodie",gallery:["back","l_hood9"],colours:cset("hv",["black","navy","olive","sand","heather"],"p_hoodie"),sizes:["S","M","L","XL","2XL","3XL"],
-   desc:"The full Presence mark on the chest of a midweight fleece hoodie. For the slow mornings, the walks with no headphones, the dinners where the phone stays in your pocket.",
+   desc:"The full Presence mark on the chest of a midweight fleece hoodie. For game nights, late drives and the nights you'll be talking about for years.",
    details:["Midweight fleece, 50% cotton / 50% polyester (Heather Grey: 90% cotton / 10% polyester)","Double-lined hood, front pouch pocket","Unisex fit, size up for a relaxed look","Machine wash cold, inside out"]},
   {id:"tee",cat:"Tees",chart:"tee",name:"Presence Tee",price:39,img:"tee2",gallery:["tb_black","tee"],colours:["black","navy","olive","heather","bone"].map(c=>({key:c,name:SW[c][0],hex:SW[c][1],img:c==="black"?"tee2":"tc_"+c,gallery:c==="black"?null:["tb_"+(c==="bone"?"last":c)]})),sizes:["S","M","L","XL","2XL"],
    desc:"Soft, lightweight everyday tee carrying the full Presence mark. The kind you reach for first, with a reminder built in.",
@@ -872,7 +872,7 @@ const PRODUCTS=[
 ];
 const app=document.getElementById("app");
 /* Shopify hand-off: once products exist, fill VARIANTS with "productId|colour|size": variantId. Checkout switches on after launch. */
-const SHOP="vyev1y-1i.myshopify.com";const VARIANTS={};
+const SHOP="vyev1y-1i.myshopify.com";const VARIANTS={"litm|black|S":67933366190170,"litm|black|M":67933366222938,"litm|black|L":67933366255706,"litm|black|XL":67933366288474,"litm|black|2XL":67933366321242,"dadhat|black|One size":67933377396826,"dadhat|navy|One size":67933377429594,"dadhat|charcoal|One size":67933377462362,"dadhat|sand|One size":67933377495130,"dadhat|bone|One size":67933383131226,"hoodie|black|S":67933348102234,"hoodie|black|M":67933348135002,"hoodie|black|L":67933348167770,"hoodie|black|XL":67933348200538,"hoodie|black|2XL":67933348233306,"hoodie|black|3XL":67933348266074,"hoodie|navy|S":67933348298842,"hoodie|navy|M":67933348331610,"hoodie|navy|L":67933348364378,"hoodie|navy|XL":67933348397146,"hoodie|navy|2XL":67933348429914,"hoodie|navy|3XL":67933348462682,"hoodie|olive|S":67933348495450,"hoodie|olive|M":67933348528218,"hoodie|olive|L":67933348560986,"hoodie|olive|XL":67933348593754,"hoodie|olive|2XL":67933348626522,"hoodie|olive|3XL":67933348659290,"hoodie|heather|S":67933356327002,"hoodie|heather|M":67933356359770,"hoodie|heather|L":67933356392538,"hoodie|heather|XL":67933356425306,"hoodie|heather|2XL":67933356458074,"hoodie|heather|3XL":67933356490842,"hoodie|sand|S":67933356523610,"hoodie|sand|M":67933356556378,"hoodie|sand|L":67933356589146,"hoodie|sand|XL":67933356621914,"hoodie|sand|2XL":67933356654682,"hoodie|sand|3XL":67933356687450,"snapback|black|One size":67933370581082,"snapback|navy|One size":67933370613850,"snapback|charcoal|One size":67933370646618,"snapback|heather|One size":67933382541402,"tee|black|S":67933359800410,"tee|black|M":67933359833178,"tee|black|L":67933359865946,"tee|black|XL":67933359898714,"tee|black|2XL":67933359931482,"tee|navy|S":67933359964250,"tee|navy|M":67933359997018,"tee|navy|L":67933360029786,"tee|navy|XL":67933360062554,"tee|navy|2XL":67933360095322,"tee|olive|S":67933360128090,"tee|olive|M":67933360160858,"tee|olive|L":67933360193626,"tee|olive|XL":67933360226394,"tee|olive|2XL":67933360259162,"tee|heather|S":67933361963098,"tee|heather|M":67933361995866,"tee|heather|L":67933362028634,"tee|heather|XL":67933362061402,"tee|heather|2XL":67933362094170,"tee|bone|S":67933362126938,"tee|bone|M":67933362159706,"tee|bone|L":67933362192474,"tee|bone|XL":67933362225242,"tee|bone|2XL":67933362258010};
 let bag=[]; try{bag=JSON.parse(localStorage.getItem("presence-bag2")||"[]");if(!Array.isArray(bag))bag=[]}catch(e){bag=[]}
 const cartEl=document.getElementById("cartcount");
 const drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim");
