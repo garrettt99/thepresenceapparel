@@ -1,3 +1,3 @@
-# The Presence Apparel
+# Presence Apparel
 
-Pre-launch website for thepresenceapparel.com. Drop 01 lands Nov 27, 2026.
+Pre-launch website for thepresenceapparel.com. Drop 01 lands Dec 15, 2026.
